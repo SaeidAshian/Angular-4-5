@@ -23,15 +23,24 @@ pre2:string= "";
 pre3:string= "";
 pre4:string= "";
 noresult:string = "";
- 
+colorCode:number;
  
  constructor(){
+  this.colorCode = Math.random();
   //setTimeout(() => {
     //if(this.result != ''  )
    // this.allowclick=true;
   //}, 5000);
  }
- ngOnInit(){}
+ ngOnInit(){
+
+ }
+ getColor(){
+   return this.colorCode > 0 && this.colorCode <= 0.25 ?'cyan':
+   this.colorCode > 0.25 && this.colorCode <= 0.5 ? 'dimgrey':
+   this.colorCode > 0.5 && this.colorCode <= 0.75 ? 'greenyellow':'palegreen';
+   
+ }
  onclickBtn(){
   if(this.result !='' ){
   this.inum ++;
