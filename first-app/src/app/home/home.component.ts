@@ -1,4 +1,5 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { IUser } from '../user';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 })
 export class HomeComponent implements OnInit,OnChanges {
 
- ratings:number[] = [Math.random()*3+2,Math.random()*3+2,Math.random()*3+2] ;
+ ratings:number[] = [Math.round((Math.random()*3+2)*10)/10,Math.round((Math.random()*3+2)*10)/10,Math.round((Math.random()*3+2)*10)/10] ;
  name:string = "saeid";
  family:string = 'ashian';
  Id:number=123554;
@@ -25,6 +26,7 @@ pre3:string= "";
 pre4:string= "";
 noresult:string = "";
 colorCode:number;
+eventOutput : IUser ;
  
  constructor(){
   this.colorCode = Math.random();
@@ -101,6 +103,10 @@ gettext4(event:Event){
 }
  getName(){
   return this.Id;
+ }
+ onClick(event: IUser){
+   this.eventOutput = event;
+   
  }
 
 }

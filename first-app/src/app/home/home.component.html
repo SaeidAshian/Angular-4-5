@@ -52,7 +52,10 @@
 </div>
 <br>
 <p>You liked us: </p>
-<app-star *ngFor ="let r of ratings"  [starrating]="r" ></app-star>
+<app-star *ngFor ="let r of ratings"  [starrating]="r" (starClicked)="onClick($event)" ></app-star>
+
+<h3 *ngIf= "eventOutput != null" >liked by : Name : <span style="color: darkkhaki">{{eventOutput.name}}</span> Family :  <span style="color: darkkhaki">{{eventOutput.Family}}</span> **** voted : {{ eventOutput.like }} </h3>
+<!-- <h2>{{inum1}}</h2> -->
 <br>
 <app-change-back-ground>
  
