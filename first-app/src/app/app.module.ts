@@ -4,11 +4,12 @@ import{ FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import{TestComponent} from './test.component';
 import { HomeComponent } from './home/home.component';
-import { ChangeBackGroundComponent } from './change-back-ground/change-back-ground.component'
+import { ChangeBackGroundComponent } from './change-back-ground/change-back-ground.component';
+import { StarComponent } from './star/star.component'
 
 @NgModule({
   declarations: [
-    AppComponent,TestComponent, HomeComponent, ChangeBackGroundComponent
+    AppComponent,TestComponent, HomeComponent, ChangeBackGroundComponent, StarComponent
   ],
   imports: [
     BrowserModule,

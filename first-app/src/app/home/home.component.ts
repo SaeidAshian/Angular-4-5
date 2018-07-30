@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit,OnChanges {
 
+ ratings:number[] = [Math.random()*3+2,Math.random()*3+2,Math.random()*3+2] ;
  name:string = "saeid";
  family:string = 'ashian';
  Id:number=123554;
@@ -31,10 +32,16 @@ colorCode:number;
     //if(this.result != ''  )
    // this.allowclick=true;
   //}, 5000);
+  document.addEventListener('click',this.ngOnChanges);
  }
  ngOnInit(){
 
  }
+ ngOnChanges(){
+  // setTimeout(() => {this.ratings = Math.random()*5
+  // }, 3000);
+ }
+ 
  getColor(){
    return this.colorCode > 0 && this.colorCode <= 0.25 ?'cyan':
    this.colorCode > 0.25 && this.colorCode <= 0.5 ? 'dimgrey':

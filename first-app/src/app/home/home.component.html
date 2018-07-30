@@ -1,7 +1,6 @@
 
-
 <div [ngStyle]="{ backgroundColor : getColor() }" class="container-fluid">
-    <div style="background-color: " class="row">
+    <div   class="row">
         <div class="col-lg-6">
             <h1>welcome to online result prediction</h1>
             <h4>you ar login with <br>name: <span style="color: coral" >{{name }}</span>  <br>family: <span style="color: coral" >{{family}}</span><br>your id is: <span style="color: coral" >{{  getName() }}</span></h4>
@@ -9,8 +8,7 @@
            <h4>Pleas enter the prediction and click the button to submit</h4>
            <div class="col-lg-6">
                 <input type="text" class="form-control" placeholder="input your prediction..." #refrence (keyup.enter)="onclickBtn(); refrence.value=''"  (input)="gettext($event)" > <br>
-           </div>
-            
+           </div>         
             <button class="btn btn-primary btn-lg" [disabled]="!allowclick" (click)="onclickBtn(); refrence.value='' " >click here</button>
            
         <!--  -->
@@ -52,6 +50,9 @@
         
     </div>
 </div>
+<br>
+<p>You liked us: </p>
+<app-star *ngFor ="let r of ratings"  [starrating]="r" ></app-star>
 <br>
 <app-change-back-ground>
  
