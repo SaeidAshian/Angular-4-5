@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, ViewChild, ElementRef } from '@angular/core';
 import { IUser } from '../user';
 
 @Component({
@@ -8,11 +8,14 @@ import { IUser } from '../user';
 })
 export class HomeComponent implements OnInit,OnChanges {
 
- ratings:number[] = [Math.round((Math.random()*3+2)*10)/10,Math.round((Math.random()*3+2)*10)/10,Math.round((Math.random()*3+2)*10)/10] ;
+ ratings:number[] = [Math.round((Math.random()*3+2)*10)/10, Math.round((Math.random()*3+2)*10)/10, Math.round((Math.random()*3+2)*10)/10] ;
  name:string = "saeid";
  family:string = 'ashian';
  Id:number=123554;
  allowclick=false;
+ like:string;
+ @ViewChild('inputPre') newlLike : ElementRef;
+ totallike:number;
  inum:number = 0;
  emptyvalue:string =null;
  result=null;
@@ -50,6 +53,12 @@ eventOutput : IUser ;
    this.colorCode > 0.5 && this.colorCode <= 0.75 ? 'greenyellow':'palegreen';
    
  }
+ onClickRefrence(inputpresend : HTMLInputElement){
+ this.like= inputpresend.value;
+ this.totallike= ( this.ratings[0] + this.ratings[1] + this.ratings[2] + this.newlLike.nativeElement.value) /4 ;
+ 
+ }
+
  onclickBtn(){
   if(this.result !='' ){
   this.inum ++;

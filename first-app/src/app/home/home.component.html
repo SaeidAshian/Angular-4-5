@@ -7,7 +7,7 @@
            <br>
            <h4>Pleas enter the prediction and click the button to submit</h4>
            <div class="col-lg-6">
-                <input type="text" class="form-control" placeholder="input your prediction..." #refrence (keyup.enter)="onclickBtn(); refrence.value=''"  (input)="gettext($event)" > <br>
+                <input type="text" class="form-control"  placeholder="input your prediction..." #refrence (keyup.enter)="onclickBtn(); refrence.value=''"  (input)="gettext($event)" > <br>
            </div>         
             <button class="btn btn-primary btn-lg" [disabled]="!allowclick" (click)="onclickBtn(); refrence.value='' " >click here</button>
            
@@ -51,12 +51,43 @@
     </div>
 </div>
 <br>
+<div [ngStyle]="{ backgroundColor : getColor() }" class="container-fluid">
+    <div   class="row">
+        <div class="col-lg-6">
 <p>You liked us: </p>
 <app-star *ngFor ="let r of ratings"  [starrating]="r" (starClicked)="onClick($event)" ></app-star>
 
-<h3 *ngIf= "eventOutput != null" >liked by : Name : <span style="color: darkkhaki">{{eventOutput.name}}</span> Family :  <span style="color: darkkhaki">{{eventOutput.Family}}</span> **** voted : {{ eventOutput.like }} </h3>
+<h4 *ngIf= "eventOutput != null" >liked by : Name : <span style="color: darkkhaki">{{eventOutput.name}}</span> Family :  <span style="color: darkkhaki">{{eventOutput.Family}}</span> **** voted : {{ eventOutput.like }} </h4>
 <!-- <h2>{{inum1}}</h2> -->
+</div>
+<div class="col-lg-3">
+    <h3>How much you like us:</h3>
+        <div class="input-group">
+         <select class="custom-select" #inputPre >
+          <option selected>Choose...</option>
+          <option value="1">1</option>
+          <option value="1.5">1.5</option>
+          <option value="2">2</option>
+          <option value="2.5">2.5</option>
+          <option value="3">3</option>
+          <option value="3.5">3.5</option>
+          <option value="4">4</option>
+          <option value="4.5">4.5</option>
+          <option value="5">5</option>
+         </select>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="onClickRefrence(inputPre)" >Button</button>
+        </div>
+      </div>
+        <h5 *ngIf=" inputPre.value != 'Choose...' " >your selection is : {{like}} </h5>
+        <h5> new total result is : {{ totallike }}</h5>
+</div>
+</div>
+</div>
+
 <br>
+
+
 <app-change-back-ground>
  
 </app-change-back-ground>
