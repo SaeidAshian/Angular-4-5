@@ -80,7 +80,7 @@
         </div>
       </div>
         <h5 *ngIf=" inputPre.value != 'Choose...' " >your selection is : {{like}} </h5>
-        <h5> new total result is : {{ totallike }}</h5>
+        <h5 *ngIf=" inputPre.value != 'Choose...' "> new total result is : {{ totallike }}</h5>
 </div>
 </div>
 </div>

@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import{TestComponent} from './test.component';
 import { HomeComponent } from './home/home.component';
 import { ChangeBackGroundComponent } from './change-back-ground/change-back-ground.component';
-import { StarComponent } from './star/star.component'
+import { StarComponent } from './star/star.component';
+import { CommentComponent } from './comment/comment.component';
+import { HeaderComponent } from './header/header.component'
 
 @NgModule({
   declarations: [
-    AppComponent,TestComponent, HomeComponent, ChangeBackGroundComponent, StarComponent
+    AppComponent,TestComponent, HomeComponent, ChangeBackGroundComponent, StarComponent, CommentComponent, HeaderComponent
   ],
   imports: [
     BrowserModule,
