@@ -8,11 +8,12 @@ import { ChangeBackGroundComponent } from './change-back-ground/change-back-grou
 import { StarComponent } from './star/star.component';
 import { CommentComponent } from './comment/comment.component';
 import { HeaderComponent } from './header/header.component';
-import { PenguinComponent } from './penguin/penguin.component'
+import { PenguinComponent } from './penguin/penguin.component';
+import { PenguinShackingComponent } from './penguin-shacking/penguin-shacking.component'
 
 @NgModule({
   declarations: [
-    AppComponent,TestComponent, HomeComponent, ChangeBackGroundComponent, StarComponent, CommentComponent, HeaderComponent, PenguinComponent
+    AppComponent,TestComponent, HomeComponent, ChangeBackGroundComponent, StarComponent, CommentComponent, HeaderComponent, PenguinComponent, PenguinShackingComponent
   ],
   imports: [
     BrowserModule,
