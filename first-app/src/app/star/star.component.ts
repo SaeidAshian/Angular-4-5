@@ -26,7 +26,7 @@ export class StarComponent implements OnInit,OnChanges {
   ngOnInit() {
   }
   ngOnChanges(){
-     this.starwidth = this.rating * 91 / 5;
+     this.starwidth = this.rating * 70 / 5;
   }
   onStartClicked(){
     this.person.like = this.rating;
