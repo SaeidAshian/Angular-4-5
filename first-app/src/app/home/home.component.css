@@ -7,3 +7,6 @@
     height: 1%;
     
   }
+  #Bigger:hover{
+    transform: scale(2);
+  }
